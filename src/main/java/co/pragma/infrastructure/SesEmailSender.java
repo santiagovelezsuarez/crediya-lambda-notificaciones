@@ -1,4 +1,4 @@
-package co.pragma.lambda;
+package co.pragma.infrastructure;
 
 import software.amazon.awssdk.services.ses.SesClient;
 import software.amazon.awssdk.services.ses.model.*;
@@ -19,7 +19,7 @@ public class SesEmailSender {
                 .destination(d -> d.toAddresses(to))
                 .message(m -> m
                         .subject(s -> s.data(subject).charset("UTF-8"))
-                        .body(b -> b.text(t -> t.data(body).charset("UTF-8")))
+                        .body(b -> b.html(t -> t.data(body).charset("UTF-8")))
                 )
                 .build();
 
