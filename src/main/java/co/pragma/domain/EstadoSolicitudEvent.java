@@ -1,4 +1,4 @@
-package co.pragma.lambda;
+package co.pragma.domain;
 
 import java.math.BigDecimal;
 
@@ -8,5 +8,6 @@ public record EstadoSolicitudEvent(
         String nombreCliente,
         BigDecimal monto,
         String estado,
-        BigDecimal tasaInteres
+        BigDecimal tasaInteres,
+        Integer plazoEnMeses
 ) {}
